@@ -1,39 +1,444 @@
-body {
-  font-family: Arial, sans-serif;
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---------- Global Styles ---------- */
+* {
   margin: 0;
   padding: 0;
-  background: #f4f4f9;
-  color: #333;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body {
+  line-height: 1.6;
+  background: #121212; /* dark background */
+  color: #e0e0e0;      /* light text */
+}
+
+/* ---------- Navigation ---------- */
 header {
-  background: #222;
-  color: white;
-  text-align: center;
-  padding: 1rem;
+  background: #1f1f1f;
+  color: #fff;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
-nav a {
-  margin: 0 10px;
-  color: #0ea5e9;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00bcd4;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin-left: -180px;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: #e0e0e0;
   text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-nav a:hover {
-  text-decoration: underline;
+.nav-links a:hover {
+  color: #00bcd4;
 }
 
-main {
+/* ---------- Responsive Navigation ---------- */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  #theme-toggle {
+    margin-top: 10px;
+  }
+}
+
+/* Toggle Button */
+#theme-toggle {
+  background: none;
+  border: 2px solid #00bcd4;
+  color: #00bcd4;
+  border-radius: 8px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+  background: #00bcd4;
+  color: #121212;
+}
+
+/* ---------- Hero Section ---------- */
+#hero {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #00bcd4, #2196f3);
+  color: #fff;
   padding: 20px;
 }
 
-section {
-  margin-bottom: 30px;
+#hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
-footer {
-  background: #222;
-  color: white;
-  text-align: center;
-  padding: 10px;
+#hero p {
+  font-size: 1.2rem;
 }
+
+/* ---------- Hero Section Profile Picture ---------- */
+.hero-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 4px solid #00bcd4;
+  box-shadow: 0 4px 15px rgba(2, 69, 121, 0.5);
+}
+
+@media (max-width: 768px) {
+  #hero h2 {
+    font-size: 2rem;
+  }
+
+  #hero p {
+    font-size: 1rem;
+  }
+
+  .hero-pic {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+/* ---------- Section Layout ---------- */
+section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #ffffff;
+  border-bottom: 3px solid #105ebe;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* ---------- About Section ---------- */
+#about p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+  }
+
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* ---------- Skills ---------- */
+#skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+}
+
+#skills li {
+  background: #1f1f1f;
+  color: #00bcd4;
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 500;
+  border: 1px solid #00bcd4;
+}
+
+/* ---------- Projects Section ---------- */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 188, 212, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card h3 {
+  color: #00bcd4;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.project-card a {
+  color: #2196f3;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 188, 212, 0.5);
+}
+
+@media (max-width: 768px) {
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Contact ---------- */
+#contact p {
+  text-align: center;
+  margin: 10px 0;
+}
+
+#contact a {
+  color: #00bcd4;
+  text-decoration: none;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Contact Section Icons ---------- */
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.contact-icons a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #00bcd4;   /* dark mode default */
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contact-icons a:hover {
+  color: #2196f3;
+}
+
+@media (max-width: 500px) {
+  .contact-icons {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* Light Theme Overrides for Contact */
+body.light-theme .contact-icons a {
+  color: #121212;
+}
+
+body.light-theme .contact-icons a:hover {
+  color: #2196f3;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  background: #1f1f1f;
+  color: #999;
+  padding: 15px;
+  margin-top: 30px;
+  border-top: 1px solid #333;
+}
+
+/* ---------- Light Theme Overrides ---------- */
+body.light-theme {
+  background: #f9f9f9; /* light background */
+  color: #121212;       /* default text black */
+}
+
+body.light-theme header {
+  background: #eee;
+  color: #121212;
+}
+
+body.light-theme .logo {
+  color: #2196f3;
+}
+
+body.light-theme .nav-links a {
+  color: #121212;
+}
+
+body.light-theme nav a:hover {
+  color: #2196f3;
+}
+
+body.light-theme #hero {
+  background: #d9eaff; /* optional light gradient */
+  color: #121212;
+}
+
+body.light-theme section h2 {
+  color: #2196f3; /* headings remain accent color */
+}
+
+body.light-theme #about p,
+body.light-theme #contact p,
+body.light-theme #skills li,
+body.light-theme .project-card p {
+  color: #121212; /* all body text black */
+}
+
+body.light-theme #skills li {
+  background: #e0e0e0;
+  color: #121212;
+  border: 1px solid #2196f3;
+}
+
+body.light-theme .project-card {
+  background: #fff;
+  color: #121212; /* project description text black */
+  box-shadow: 0 4px 10px rgba(33, 150, 243, 0.2);
+}
+
+body.light-theme footer {
+  background: #eee;
+  color: #121212;
+  border-top: 1px solid #ccc;
+}
+
+/* ---------- Section Fade-in Animation ---------- */
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hamburger button */
+.hamburger {
+  display: none; /* hidden on desktop */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Hamburger button spans */
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #00bcd4;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animate to X when open */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px; /* below nav */
+    left: 0;
+    right: 0;
+    background: #1f1f1f;
+    flex-direction: column;
+    align-items: center;
+    display: none; /* hidden by default */
+    padding: 20px 0;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .hamburger {
+    display: flex; /* show hamburger */
+  }
+}
+
+/* Show nav links when hamburger is clicked */
+.nav-links.open {
+  display: flex;
+}
+

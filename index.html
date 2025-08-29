@@ -1,47 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oshadha Mularaje - Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="description" content="Oshadha Premudith - BSc Computer Science undergraduate. Portfolio showcasing projects, skills, and contact information.">
+    <meta name="keywords" content="Oshadha Premudith, Portfolio, Computer Science, Web Developer, Projects, GitHub">
+    <meta name="author" content="Oshadha Premudith">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <title>Oshadha Premudith | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Hello, I’m Oshadha Mularaje 👋</h1>
-    <p>BSc Computer Science Undergraduate | Aspiring Developer</p>
+<!-- Navigation -->
+    <header>
     <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+        <h1 class="logo">Oshadha Premudith</h1>
+
+        <!-- Hamburger menu button -->
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        </ul>
+        <!-- Dark/Light Toggle Button -->
+        <button id="theme-toggle">🌙</button>
     </nav>
-  </header>
+    </header>
 
-  <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <p>I’m learning web development and building cool projects.</p>
+  <!-- Hero Section -->
+    <section id="hero">
+    <img src="images/profile.jpg" alt="Oshadha Premudith" class="hero-pic">
+    <h2>Hello, I’m Oshadha 👋</h2>
+    <p>Undergraduate in BSc Computer Science | Aspiring Software Developer</p>
     </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>Project 1:</strong> A simple website with HTML & CSS</li>
-        <li><strong>Project 2:</strong> A JavaScript calculator</li>
-      </ul>
-    </section>
 
+  <!-- About -->
+   <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am a Computer Science undergraduate passionate about software development,
+      problem solving, and building impactful projects. I enjoy learning new technologies
+      and applying them in real-world applications.
+    </p>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML, CSS, JavaScript</li>
+      <li>Python, Java</li>
+      <li>Git & GitHub</li>
+      <li>Problem Solving</li>
+    </ul>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <h2>Education</h2>
+    <p>BSc Computer Science (Undergraduate)</p>
+    <p>SLIIT CITY UNI – Expected Graduation: 2027</p>
+  </section>
+
+  <!-- Projects -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects-container">
+
+    <div class="project-card">
+      <h3>Portfolio Website</h3>
+      <p>My personal portfolio website built with HTML, CSS, and JavaScript. Showcases my skills and projects.</p>
+      <a href="https://github.com/Oshadha-Premudith/portfolio" target="_blank">View on GitHub</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Calculator App</h3>
+      <p>A simple JavaScript calculator for basic arithmetic operations.</p>
+      <a href="https://github.com/Oshadha-Premudith/calculator" target="_blank">View on GitHub</a>
+    </div>
+
+    <!-- Add more project-card divs here -->
+    
+  </div>
+</section>
+
+<!-- Contact -->
     <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: your.email@example.com</p>
-      <p>GitHub: <a href="https://github.com/Oshadha-Premudith" target="_blank">Oshadha-Premudith</a></p>
+    <h2>Contact Me</h2>
+    <div class="contact-icons">
+        <a href="mailto:oshadhapremudith.com" target="_blank">
+        <i class="fas fa-envelope"></i> Email
+        </a>
+        <a href="https://github.com/Oshadha-Premudith" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/your-linkedin/" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+    </div>
     </section>
-  </main>
 
+
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Oshadha Mularaje</p>
+    <p>© 2025 Oshadha Premudith. All rights reserved.</p>
   </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
